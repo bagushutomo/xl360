@@ -67,7 +67,6 @@ module.exports = function(grunt) {
           inline: true
         },
         processors: [
-          require('pixrem')(),
           require('autoprefixer-core')({browsers: 'last 2 versions'})
         ]
       },
@@ -83,15 +82,23 @@ module.exports = function(grunt) {
           report: 'gzip'
         },
         files: {
-          'css/style.min.css': ['<%= autoprefixer.single_file.src %>'],
-          'css/style.prefixed.min.css': ['<%= autoprefixer.single_file.dest %>']
+          'css/style.min.css': [stylesDir + 'site.css'],
+          'css/style.prefixed.min.css': [stylesDir + 'site.prefixed.css']
         }
       }
     },
 
     concat: {
       js: {
-        src: [scriptsDir + 'xm.min.js', scriptsDir + 'main.js'],
+        src: [
+          scriptsDir + 'src/three/three.js',
+          scriptsDir + 'src/three/DeviceOrientationControl.js',
+          scriptsDir + 'src/three/OrbitControls.js',
+          scriptsDir + 'src/three/StereoEffect.js',
+          scriptsDir + 'src/com/namespace.js',
+          scriptsDir + 'src/com/scene.js',
+          scriptsDir + 'src/main.js'
+        ],
         dest: scriptsDir + 'release.js'
       }
     },
@@ -127,9 +134,10 @@ module.exports = function(grunt) {
       },
       js: {
         files: [
-          scriptsDir + "src/*.js"
+          scriptsDir + "src/*.js",
+          scriptsDir + "src/com/*.js"
         ],
-        tasks: ["concat", "uglify"],
+        tasks: ["concat"],
         options: {
           nospawn: true
         }
@@ -142,7 +150,8 @@ module.exports = function(grunt) {
   });
 
   // Default task(s)
-  grunt.registerTask('default', ["jade:develop", "sass", "postcss", "csso:compress", "concat", "uglify:debug"]);
+  grunt.registerTask('debug', ["jade:develop", "sass", "postcss", "csso:compress", "concat"]);
+  grunt.registerTask('default', ["jade:develop", "sass", "postcss", "csso:compress", "concat", "uglify"]);
 
   grunt.registerTask('dev', ["watch"]);
 
