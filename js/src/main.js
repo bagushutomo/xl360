@@ -1,4 +1,13 @@
 (function($, Scene) {
-  Scene.init('panorama', 'img/checker.png');
-  Scene.animate();
+  Scene.init([
+    {
+      id: 'panorama-high',
+      img: 'img/city.jpg'
+    },
+    {
+      id: 'panorama-low',
+      img: 'img/city-lores.jpg'
+    }
+  ]);
+  Scene.start();
 })(jQuery, XM.com.Scene);

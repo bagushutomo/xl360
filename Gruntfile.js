@@ -82,8 +82,7 @@ module.exports = function(grunt) {
           report: 'gzip'
         },
         files: {
-          'css/style.min.css': [stylesDir + 'site.css'],
-          'css/style.prefixed.min.css': [stylesDir + 'site.prefixed.css']
+          'css/style.min.css': [stylesDir + 'site.css']
         }
       }
     },
@@ -144,7 +143,7 @@ module.exports = function(grunt) {
       },
       jade: {
         files: ["**/*.jade"],
-        tasks: ["jade"]
+        tasks: ["jade:develop"]
       }
     }
   });

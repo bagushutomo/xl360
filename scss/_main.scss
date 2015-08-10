@@ -1,7 +1,92 @@
-.scene {
+body {
+  background-color: black;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  height: 100%;
+}
+
+.title {
+  font-size: 16px;
+  color: #fff;
+}
+.caption {
+  color: #fff;
+}
+.help {
+  color: #fff;
+  float: left;
+  width: 50%;
+}
+.helpnote {
+  width: 100%;
+  display: inline-block;
+}
+.arrow {
+  float: right;
+  margin-top: 1.3em;
+  margin-bottom: 1.3em;
+}
+.legendnote {
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  bottom: 20%;
+  right: 15px;
+}
+.legend {
+  text-align: right;
+  color: #fff;
+}
+
+
+.wrapper {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.scene-high {
+  width: 100%;
+  height: 100%;
+}
+
+.scene-low {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper-high {
+  overflow: hidden;
+  height: 70%;
+  border-bottom: 1px solid #ababab;
+}
+
+.headline {
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  height: 100px;
+}
+
+.logo1 {
+  float: left;
+  width: 30%;
+}
+
+.logo2 {
+  float: right;
+  width: 60%;
+}
+
+.title {
+  display: block;
+  clear: both;
 }
