@@ -10,7 +10,7 @@ XL360 Prototype
 
 ### Get Started
 
-* Run `npm install` in `/xl360` folder to install Grunt and its plugins.
+* Run `npm install autoprefixer-core` in `/xl360` folder to install Grunt and its plugins.
 * Run `grunt dev` in `/xl360` folder to "watch" the source code files. Any change on the source code will be compiled, minified, and stored in their respective path.
 * Run `grunt` in `/xl360` folder to manually "compile" the source code files. Any change on the source code will be compiled, minified, and stored in their respective path.
 * Javascript source code located in `/xl360/js/src/`.
